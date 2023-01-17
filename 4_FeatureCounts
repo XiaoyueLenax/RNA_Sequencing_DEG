@@ -1,0 +1,15 @@
+#!/bin/bash
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=5G
+#SBATCH --time=03:00:00
+#SBATCH --job-name=featureCounts
+#SBATCH --mail-user=xiaoyue.deng@students.unibe.ch
+#SBATCH --mail-type=fail,end
+#SBATCH --output=/home/xdeng/output_fc_%j.o
+#SBATCH --error=/home/xdeng/error_fc_%j.e
+
+
+# Using the parameters specified
+featureCounts -p -C -s 2 -Q 10 -T 4 -a /data/users/xdeng/QCRNAseq/01HISAT2/Mus_musculus.GRCm39.108.gtf.gz -o 2ndfeatureCounts.txt /data/users/xdeng/QCRNAseq/01HISAT2/*.sorted.bam
+#The directory  /data/users/xdeng/QCRNAseq may be modified by the time the report is due.
+#Regardless, the purporse of this step is to perform featureCounts on the sorted bam files to produce a table of counts containing the number of reads per gene in each sample.
