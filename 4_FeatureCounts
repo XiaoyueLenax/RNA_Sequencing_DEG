@@ -13,3 +13,5 @@
 featureCounts -p -C -s 2 -Q 10 -T 4 -a /data/users/xdeng/QCRNAseq/01HISAT2/Mus_musculus.GRCm39.108.gtf.gz -o 2ndfeatureCounts.txt /data/users/xdeng/QCRNAseq/01HISAT2/*.sorted.bam
 #The directory  /data/users/xdeng/QCRNAseq may be modified by the time the report is due.
 #Regardless, the purporse of this step is to perform featureCounts on the sorted bam files to produce a table of counts containing the number of reads per gene in each sample.
+
+#Output here is named 2ndfeatureCounts.txt because the procedure has been repeated once.
