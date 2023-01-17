@@ -99,6 +99,29 @@ summary(lung_dta,alpha = 0.05)
 #LFC < 0 (down)     : 4071, 57%
 
 
+#Finding genes of interested based on publications:
+#IFN gamma
+print(blood_dta['ENSMUSG00000055170',]) #found
+print(lung_dta['ENSMUSG00000055170',]) #found
+
+#CD4
+print(blood_dta['ENSMUSG00000023274',]) #found
+print(lung_dta['ENSMUSG00000023274',]) #found
+
+#ICAM1
+print(blood_dta['ENSMUSG00000037405',]) #found
+print(lung_dta['ENSMUSG00000037405',]) #not found, padj=0.014
+
+#il4
+print(blood_dta['ENSMUSG00000000869',]) #found
+print(lung_dta['ENSMUSG00000000869',]) #not found, padj = 0.86
+
+
+#il15
+print(blood_dta['ENSMUSG00000031712',]) #not found, padj = 0.15 
+print(lung_dta['ENSMUSG00000031712',]) #found
+
+
 ###Step 7: Overrepresentation Analysis
 b_dtagene <- row.names(blood_dta)
 l_dtagene <- row.names(lung_dta)
