@@ -1,0 +1,26 @@
+#!/bin/bash
+#SBATCH --cpus-per-task=4
+#SBATCH --mem-per-cpu=10G
+#SBATCH --time=10:00:00
+#SBATCH --job-name=map_all
+#SBATCH --mail-user=xiaoyue.deng@students.unibe.ch
+#SBATCH --mail-type=fail,end
+#SBATCH --output=/home/xdeng/output_mapping_%j.o
+#SBATCH --error=/home/xdeng/error_mapping_%j.e
+
+samtools sort -m 10GB -@ 4 -o SRR7821918.sorted.bam -T temp SRR7821918.bam
+samtools sort -m 10GB -@ 4 -o SRR7821919.sorted.bam -T temp SRR7821919.bam
+samtools sort -m 10GB -@ 4 -o SRR7821920.sorted.bam -T temp SRR7821920.bam
+samtools sort -m 10GB -@ 4 -o SRR7821921.sorted.bam -T temp SRR7821921.bam
+samtools sort -m 10GB -@ 4 -o SRR7821922.sorted.bam -T temp SRR7821922.bam
+samtools sort -m 10GB -@ 4 -o SRR7821937.sorted.bam -T temp SRR7821937.bam
+samtools sort -m 10GB -@ 4 -o SRR7821938.sorted.bam -T temp SRR7821938.bam
+samtools sort -m 10GB -@ 4 -o SRR7821939.sorted.bam -T temp SRR7821939.bam
+samtools sort -m 10GB -@ 4 -o SRR7821949.sorted.bam -T temp SRR7821949.bam
+samtools sort -m 10GB -@ 4 -o SRR7821950.sorted.bam -T temp SRR7821950.bam
+samtools sort -m 10GB -@ 4 -o SRR7821951.sorted.bam -T temp SRR7821951.bam
+samtools sort -m 10GB -@ 4 -o SRR7821952.sorted.bam -T temp SRR7821952.bam
+samtools sort -m 10GB -@ 4 -o SRR7821953.sorted.bam -T temp SRR7821953.bam
+samtools sort -m 10GB -@ 4 -o SRR7821968.sorted.bam -T temp SRR7821968.bam
+samtools sort -m 10GB -@ 4 -o SRR7821969.sorted.bam -T temp SRR7821969.bam
+samtools sort -m 10GB -@ 4 -o SRR7821970.sorted.bam -T temp SRR7821970.bam
