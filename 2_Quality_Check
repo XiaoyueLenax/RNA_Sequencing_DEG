@@ -1,0 +1,32 @@
+#!/bin/bash
+
+#SBATCH --job-name="doQC"
+#SBATCH --cpus-per-task=2
+#SBATCH --time=03:00:00
+#SBATCH --mem=2GB
+#SBATCH --mail-type=fail,end
+#SBATCH --mail-user=xiaoyue.deng@students.unibe.ch
+
+#Loading required modules
+module add UHTS/Quality_control/fastqc/0.11.9;
+# link to fsdtq files contained in "READS" folder, given in the cluster
+ln -s /data/courses/rnaseq/toxoplasma_de/reads/*.fastq.gz .
+#perform fastqc 
+fastqc -t 4 *.fastq.gz
+
+#secure copy the files locally
+
+#Directly downloaded using ssh remote in VS studio code, or:
+scp xdeng@binfservms01.unibe.ch:/data/courses/rnaseq/toxoplasma_de/xiaoyueLena_workplace/qc/*.html /mnt/c/Users/xiaoyue/Desktop .
+##NOTICE: data/courses/rnaseq/toxoplasma_de/xiaoyueLena_workplace has hence been removed, the alternative file location is /data/users/xdeng/QCRNAseq/Fastqc . 
+
+#For multiqc:(Terminal input)
+#module add UHTS/Analysis/trimmomatic/0.36;
+#srun  --mem=25G --cpus-per-task=2 --time=01:00:00 --pty bash
+#multiqc .
+#Downloaded output
+
+#produce stats for the fastq files with seqkit stat module
+#srun  --mem=25G --cpus-per-task=2 --time=01:00:00 --pty bash
+#add module : module add UHTS/Analysis/SeqKit/0.13.2
+#run seqkit stat *.gz > fastq_stats.txt
