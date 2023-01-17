@@ -1,0 +1,215 @@
+#Import the result from cluster to local machine. Following tasks performed in R studio (4.2.2)
+#reading table from featurecounts
+Rcounts <- read.table("trimmedcountsv2.txt",header = TRUE,row.names = 1)
+#Adding column names to match, preparing for dds later
+colnames(Rcounts) <- c('SRR7821918','SRR7821919','SRR7821920','SRR7821921',
+                       'SRR7821922','SRR7821937','SRR7821938','SRR7821939',
+                       'SRR7821949','SRR7821950','SRR7821951','SRR7821952',
+                       'SRR7821953','SRR7821968','SRR7821969','SRR7821970') 
+#checking whether all 16 samples are included
+dim(Rcounts) 
+
+#Biomanager install
+if (!requireNamespace('BiocManager', quietly = TRUE))
+    install.packages('BiocManager')
+ 
+#Universal installer: used to install all the packages mentioned below
+ BiocManager::install(_)
+
+#Library preparation for step 5-7
+#All these packages are previously installed.
+library(DESeq2)
+library(dplyr)
+library(clusterProfiler)
+library(cowplot)
+library(EnhancedVolcano)
+library('org.Mm.eg.db')
+library('enrichplot')
+library('ggplot2')
+library(ggrepel)
+library(ggstance)
+library(ggupset)
+library("gplots")
+library('pheatmap')
+library('plotCounts')
+library(pheatmap)
+library(forcats)
+library(enrichplot)
+library("RColorBrewer")
+
+#Making ref table for DESeq
+strains <- c('SRR7821918','SRR7821919','SRR7821920','SRR7821921',
+             'SRR7821922','SRR7821937','SRR7821938','SRR7821939',
+             'SRR7821949','SRR7821950','SRR7821951','SRR7821952',
+             'SRR7821953','SRR7821968','SRR7821969','SRR7821970')
+conditions <- c(rep('Lung_WT_Case',5), rep('Lung_WT_Control',3),
+                rep('Blood_WT_Case',5),rep('Blood_WT_Control',3))
+reftable <- data.frame(conditions)
+rownames(reftable) <- strains
+
+#DESeq2:
+dds <- DESeqDataSetFromMatrix(countData = Rcounts,
+                              colData = reftable,
+                              design = ~conditions)
+
+#store dds output
+dds_output <- DESeq(dds)
+
+#Plot PCA graph
+dds_vst<- vst(dds, blind=TRUE)
+plotPCA(dds_vst, intgroup = 'conditions')
+
+
+###Step 6: Differential expression Analysis
+blood<-DESeq2::results(dds_output, contrast = c('conditions','Blood_WT_Case','Blood_WT_Control'))
+lung<-DESeq2::results(dds_output, contrast = c('conditions','Lung_WT_Case','Lung_WT_Control'))
+allcase<-DESeq2::results(dds_output, contrast = c('conditions','Blood_WT_Case','Lung_WT_Control'))
+allcontrol<-DESeq2::results(dds_output, contrast = c('conditions','Blood_WT_Control','Lung_WT_Control'))
+#Checking whether the outcome is correct
+head(lung)
+head(blood)
+dim(lung)
+dim(blood)
+
+#checking length of differentially expressed genes with selected adjusted p value of 0.01
+#Looks at the blood case vs control, and lung case vs control
+length(which(blood$padj <= 0.01)) #10152 differential expressed genes
+length(which(lung$padj <= 0.01))#7092
+#Extra: tried the other two control groups out of interest
+length(which(allcase$padj <= 0.01))#14809
+length(which(allcontrol$padj <= 0.01))#11908
+
+
+#Subsetting the differentially expressed genes
+blood_dta <- subset(blood, padj<= 0.01)
+lung_dta <- subset(lung,padj <= 0.01)
+disease_dta <- subset(allcase,padj <= 5e-60)
+#Quality check:
+head(blood_dta) 
+head(lung_dta)
+
+
+#Check up and down regulated genes in the subsetted group
+summary(blood_dta, alpha = 0.05)
+#LFC > 0 (up)       : 3697, 36%
+#LFC < 0 (down)     : 6455, 64%
+
+summary(lung_dta,alpha = 0.05)
+#LFC > 0 (up)       : 3021, 43%
+#LFC < 0 (down)     : 4071, 57%
+
+
+###Step 7: Overrepresentation Analysis
+b_dtagene <- row.names(blood_dta)
+l_dtagene <- row.names(lung_dta)
+B_gene <- row.names(blood)
+L_gene <- row.names(lung)
+#Checking
+head(b_dtagene)
+
+#Enrichment for blood case vs control
+GOblood <- clusterProfiler::enrichGO(gene = b_dtagene,
+                                     OrgDb = org.Mm.eg.db,
+                                     universe = names(B_gene),
+                                     ont = 'ALL',
+                                     keyType = 'ENSEMBL',
+                                     pAdjustMethod = 'BH',
+                                     pvalueCutoff = 0.05,
+                                     qvalueCutoff = 0.05,
+                                     readable = TRUE)
+#Plotting results: Barplot and dotplot
+barplot(GOblood, x = 'Count', color = 'p.adjust',showCategory=10, font.size = 9,)
+dotplot(GOblood,showCategory=15, font.size=7.5)
+#Plotting enrichment map
+options(ggrepel.max.overlaps = 199) #setting a bigger maximum overlap
+bloodo <- pairwise_termsim(GOblood)
+bloodplot <- emapplot(bloodo,showCategory = 30, cex_label_category = 0.5)
+bloodplot
+#Plotting Enhanced volcano plot for the blood
+EnhancedVolcano(blood,
+                lab = NA,
+                x = 'log2FoldChange',
+                y = -log10('padj'),
+                title = "Blood case vs control",
+                legendPosition = 'bottom')
+
+
+#Enrichment for lung case vs control
+GOlung <- clusterProfiler::enrichGO(gene = l_dtagene,
+                                    OrgDb = org.Mm.eg.db,
+                                    universe = names(L_gene),
+                                    ont = 'ALL',
+                                    keyType = 'ENSEMBL',
+                                    pAdjustMethod = 'BH',
+                                    pvalueCutoff = 0.05,
+                                    qvalueCutoff = 0.05,
+                                    readable = TRUE)
+#Plotting bar and boxplot
+barplot(GOlung, x = 'Count', color = 'p.adjust',showCategory=10,font.size = 9)
+dotplot(GOlung,showCategory=15, font.size=8)
+#plotting enrichment map:
+lungdo <- pairwise_termsim(GOlung)
+lungplot <- emapplot(lungdo,showCategory = 30, cex_label_category = 0.5)
+lungplot
+#Plotting enhanced volcano plot for the lung
+EnhancedVolcano(lung,
+                lab = NA,
+                x = 'log2FoldChange',
+                y = 'padj',
+                title = "Lung case vs control",
+                legendPosition = 'bottom')
+
+
+#Plotting:
+#For the combined volcano plot of blood and lung:
+#Making the dataframe for blood
+blood_volcano <- data.frame(gene=row.names(blood), pval=-log10(blood$padj), lfc=blood$log2FoldChange)
+#Removing NAs
+blood_volcano <- na.omit(blood_volcano)
+#Setting upper & lower threshold - since adjusted p value is 0.01, -log10(padj) = 2
+blood_volcano <- mutate(blood_volcano, color=case_when(
+  blood_volcano$lfc > 0 & blood_volcano$pval > 2 ~ "Increased",
+  blood_volcano$lfc < 0 & blood_volcano$pval > 2 ~ "Decreased",
+  blood_volcano$pval < 2 ~ "nonsignificant"))
+vol1 <- ggplot(blood_volcano, aes(x=lfc, y=pval, color=color))
+
+
+#Making data frame for lung
+lung_volcano <- data.frame(gene=row.names(lung), pval=-log10(lung$padj), lfc=lung$log2FoldChange)
+# Removing NAs
+lung_volcano <- na.omit(lung_volcano)
+# set upper and lower threshold
+lung_volcano <- mutate(lung_volcano, color=case_when(
+  lung_volcano$lfc > 0 & lung_volcano$pval > 2 ~ "Increased",
+  lung_volcano$lfc < 0 & lung_volcano$pval > 2 ~ "Decreased",
+  lung_volcano$pval < 2 ~ "nonsignificant"))
+vol2 <- ggplot(lung_volcano, aes(x=lfc, y=pval, color=color))
+
+#Plotting the two graphs together
+plot_grid(vol1 +  ggtitle(label="Volcano Plot") +
+            geom_point(size=2.5, alpha=0.8, na.rm=T) +
+            scale_color_manual(name="Directionality",
+                               values=c(Decreased="#0074FE", Increased="#F61E00",
+                                        nonsignificant="darkgray")) +
+            theme_bw(base_size=10) +
+            theme(legend.position="right") +
+            xlab(expression(log[2]("Blood_Case vs. Blood_Control"))) +
+            ylab(expression(-log[10]("adjusted p-value"))) +
+            geom_hline(yintercept=1.3, colour="darkgrey") +
+            scale_y_continuous(trans="log1p")
+          , vol2 + geom_point(size=2.5, alpha=0.8, na.rm=T) +
+            scale_color_manual(name="Directionality",
+                               values=c(Decreased="#0074FE", Increased="#F61E00",
+                                        nonsignificant="darkgray")) +
+            theme_bw(base_size=10) +
+            theme(legend.position="right") +
+            xlab(expression(log[2]("Lung_Case vs. Lung_Control"))) +
+            ylab(expression(-log[10]("adjusted p-value"))) +
+            geom_hline(yintercept=1.3, colour="darkgrey") +
+            scale_y_continuous(trans="log1p")
+          , byrow = TRUE, nrow = 2)
+
+
+
+
+
