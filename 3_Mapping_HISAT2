@@ -19,3 +19,4 @@ NAMES=("SRR7821918" "SRR7821919" "SRR7821920" "SRR7821921" "SRR7821922" "SRR7821
 
 # Run hisat2 mapping jobs
 hisat2 -x $INDEX/Mus_musculus.GRCm39.dna.primary_assembly.fa -1 $FASTQ/${NAMES[$SLURM_ARRAY_TASK_ID]}_1.fastq.gz -2 $FASTQ/${NAMES[$SLURM_ARRAY_TASK_ID]}_2.fastq.gz -S ${NAMES[$SLURM_ARRAY_TASK_ID]}.sam -p 4 --rna-strandness RF
+#The current location would be the output directory. To change, use cd desired_directory.
