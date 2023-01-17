@@ -1,0 +1,29 @@
+#!/bin/bash
+#SBATCH --cpus-per-task=2
+#SBATCH --mem-per-cpu=5G
+#SBATCH --time=10:00:00
+#SBATCH --job-name=map_all
+#SBATCH --mail-user=xiaoyue.deng@students.unibe.ch
+#SBATCH --mail-type=fail,end
+#SBATCH --output=/home/xdeng/output_mapping_%j.o
+#SBATCH --error=/home/xdeng/error_mapping_%j.e
+#SBATCH --array=0-16
+
+
+#Doing it the not so smart way for each job
+samtools view -hb SRR7821918.sam > SRR7821918.bam
+samtools view -hb SRR7821919.sam > SRR7821919.bam
+samtools view -hb SRR7821920.sam > SRR7821920.bam
+samtools view -hb SRR7821921.sam > SRR7821921.bam
+samtools view -hb SRR7821922.sam > SRR7821922.bam
+samtools view -hb SRR7821937.sam > SRR7821937.bam
+samtools view -hb SRR7821938.sam > SRR7821938.bam
+samtools view -hb SRR7821939.sam > SRR7821939.bam
+samtools view -hb SRR7821949.sam > SRR7821949.bam
+samtools view -hb SRR7821950.sam > SRR7821950.bam
+samtools view -hb SRR7821951.sam > SRR7821951.bam
+samtools view -hb SRR7821952.sam > SRR7821952.bam
+samtools view -hb SRR7821953.sam > SRR7821953.bam
+samtools view -hb SRR7821968.sam > SRR7821968.bam
+samtools view -hb SRR7821969.sam > SRR7821969.bam
+samtools view -hb SRR7821970.sam > SRR7821970.bam
