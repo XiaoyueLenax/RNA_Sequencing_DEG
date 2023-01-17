@@ -101,25 +101,25 @@ summary(lung_dta,alpha = 0.05)
 
 #Finding genes of interested based on publications:
 #IFN gamma
-print(blood_dta['ENSMUSG00000055170',]) #found
-print(lung_dta['ENSMUSG00000055170',]) #found
+print(blood_dta['ENSMUSG00000055170',]) #found, upregulated
+print(lung_dta['ENSMUSG00000055170',]) #found,upregulated
 
 #CD4
-print(blood_dta['ENSMUSG00000023274',]) #found
-print(lung_dta['ENSMUSG00000023274',]) #found
+print(blood_dta['ENSMUSG00000023274',]) #found, upregulated
+print(lung_dta['ENSMUSG00000023274',]) #found.upregulated
 
 #ICAM1
-print(blood_dta['ENSMUSG00000037405',]) #found
+print(blood_dta['ENSMUSG00000037405',]) #found,upregulated
 print(lung_dta['ENSMUSG00000037405',]) #not found, padj=0.014
 
 #il4
-print(blood_dta['ENSMUSG00000000869',]) #found
+print(blood_dta['ENSMUSG00000000869',]) #found,downregulated
 print(lung_dta['ENSMUSG00000000869',]) #not found, padj = 0.86
 
 
 #il15
 print(blood_dta['ENSMUSG00000031712',]) #not found, padj = 0.15 
-print(lung_dta['ENSMUSG00000031712',]) #found
+print(lung_dta['ENSMUSG00000031712',]) #found, upregulated
 
 
 ###Step 7: Overrepresentation Analysis
