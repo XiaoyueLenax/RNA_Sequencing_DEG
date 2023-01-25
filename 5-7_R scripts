@@ -184,22 +184,27 @@ EnhancedVolcano(lung,
 
 
 #Plotting:
-#For the combined volcano plot of blood and lung:
-#Making the dataframe for blood
+#Visualization: Volcano Plot
+library(dplyr)
+library(forcats)
+library(enrichplot)
+library(ggstance)
+library(ggupset)
+library("RColorBrewer")
+library("gplots")
+#Trying volcano plot
 blood_volcano <- data.frame(gene=row.names(blood), pval=-log10(blood$padj), lfc=blood$log2FoldChange)
-#Removing NAs
 blood_volcano <- na.omit(blood_volcano)
-#Setting upper & lower threshold - since adjusted p value is 0.01, -log10(padj) = 2
+#Setting upper & lower threshold
 blood_volcano <- mutate(blood_volcano, color=case_when(
   blood_volcano$lfc > 0 & blood_volcano$pval > 2 ~ "Increased",
   blood_volcano$lfc < 0 & blood_volcano$pval > 2 ~ "Decreased",
   blood_volcano$pval < 2 ~ "nonsignificant"))
 vol1 <- ggplot(blood_volcano, aes(x=lfc, y=pval, color=color))
 
-
-#Making data frame for lung
+#second group
 lung_volcano <- data.frame(gene=row.names(lung), pval=-log10(lung$padj), lfc=lung$log2FoldChange)
-# Removing NAs
+# remove na
 lung_volcano <- na.omit(lung_volcano)
 # set upper and lower threshold
 lung_volcano <- mutate(lung_volcano, color=case_when(
@@ -207,8 +212,7 @@ lung_volcano <- mutate(lung_volcano, color=case_when(
   lung_volcano$lfc < 0 & lung_volcano$pval > 2 ~ "Decreased",
   lung_volcano$pval < 2 ~ "nonsignificant"))
 vol2 <- ggplot(lung_volcano, aes(x=lfc, y=pval, color=color))
-
-#Plotting the two graphs together
+library(cowplot)
 plot_grid(vol1 +  ggtitle(label="Volcano Plot") +
             geom_point(size=2.5, alpha=0.8, na.rm=T) +
             scale_color_manual(name="Directionality",
@@ -231,8 +235,4 @@ plot_grid(vol1 +  ggtitle(label="Volcano Plot") +
             geom_hline(yintercept=1.3, colour="darkgrey") +
             scale_y_continuous(trans="log1p")
           , byrow = TRUE, nrow = 2)
-
-
-
-
-
+dev.off()
