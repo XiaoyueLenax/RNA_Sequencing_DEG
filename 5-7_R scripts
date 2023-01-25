@@ -117,9 +117,9 @@ print(blood_dta['ENSMUSG00000000869',]) #found,downregulated
 print(lung_dta['ENSMUSG00000000869',]) #not found, padj = 0.86
 
 
-#il15
-print(blood_dta['ENSMUSG00000031712',]) #not found, padj = 0.15 
-print(lung_dta['ENSMUSG00000031712',]) #found, upregulated
+#IL-5
+print(blood_dta['ENSMUSG00000036117',]) #Found, down regulated
+print(lung_dta['ENSMUSG00000036117',]) #Not found, -adk = 0.019, downregulated
 
 
 ###Step 7: Overrepresentation Analysis
