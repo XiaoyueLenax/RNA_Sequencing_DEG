@@ -1,0 +1,271 @@
+Output for SRR7821918 
+36220112 reads; of these:
+  36220112 (100.00%) were paired; of these:
+    2152358 (5.94%) aligned concordantly 0 times
+    31958963 (88.24%) aligned concordantly exactly 1 time
+    2108791 (5.82%) aligned concordantly >1 times
+    ----
+    2152358 pairs aligned concordantly 0 times; of these:
+      340763 (15.83%) aligned discordantly 1 time
+    ----
+    1811595 pairs aligned 0 times concordantly or discordantly; of these:
+      3623190 mates make up the pairs; of these:
+        1954438 (53.94%) aligned 0 times
+        1439856 (39.74%) aligned exactly 1 time
+        228896 (6.32%) aligned >1 times
+97.30% overall alignment rate
+
+Output for SRR7821919
+36285942 reads; of these:
+  36285942 (100.00%) were paired; of these:
+    2228922 (6.14%) aligned concordantly 0 times
+    32058548 (88.35%) aligned concordantly exactly 1 time
+    1998472 (5.51%) aligned concordantly >1 times
+    ----
+    2228922 pairs aligned concordantly 0 times; of these:
+      361969 (16.24%) aligned discordantly 1 time
+    ----
+    1866953 pairs aligned 0 times concordantly or discordantly; of these:
+      3733906 mates make up the pairs; of these:
+        1919839 (51.42%) aligned 0 times
+        1569817 (42.04%) aligned exactly 1 time
+        244250 (6.54%) aligned >1 times
+97.35% overall alignment rate
+
+Output for SRR7821920
+39982873 reads; of these:
+  39982873 (100.00%) were paired; of these:
+    4792022 (11.99%) aligned concordantly 0 times
+    32915298 (82.32%) aligned concordantly exactly 1 time
+    2275553 (5.69%) aligned concordantly >1 times
+    ----
+    4792022 pairs aligned concordantly 0 times; of these:
+      515748 (10.76%) aligned discordantly 1 time
+    ----
+    4276274 pairs aligned 0 times concordantly or discordantly; of these:
+      8552548 mates make up the pairs; of these:
+        4721109 (55.20%) aligned 0 times
+        2973094 (34.76%) aligned exactly 1 time
+        858345 (10.04%) aligned >1 times
+94.10% overall alignment rate
+
+Output for SRR7821921
+40592768 reads; of these:
+  40592768 (100.00%) were paired; of these:
+    2630616 (6.48%) aligned concordantly 0 times
+    35749729 (88.07%) aligned concordantly exactly 1 time
+    2212423 (5.45%) aligned concordantly >1 times
+    ----
+    2630616 pairs aligned concordantly 0 times; of these:
+      451756 (17.17%) aligned discordantly 1 time
+    ----
+    2178860 pairs aligned 0 times concordantly or discordantly; of these:
+      4357720 mates make up the pairs; of these:
+        2221072 (50.97%) aligned 0 times
+        1839656 (42.22%) aligned exactly 1 time
+        296992 (6.82%) aligned >1 times
+97.26% overall alignment rate
+
+Output for SRR7821922
+37737087 reads; of these:
+  37737087 (100.00%) were paired; of these:
+    2299360 (6.09%) aligned concordantly 0 times
+    33316336 (88.29%) aligned concordantly exactly 1 time
+    2121391 (5.62%) aligned concordantly >1 times
+    ----
+    2299360 pairs aligned concordantly 0 times; of these:
+      338107 (14.70%) aligned discordantly 1 time
+    ----
+    1961253 pairs aligned 0 times concordantly or discordantly; of these:
+      3922506 mates make up the pairs; of these:
+        2022098 (51.55%) aligned 0 times
+        1631637 (41.60%) aligned exactly 1 time
+        268771 (6.85%) aligned >1 times
+97.32% overall alignment rate
+
+Output for SRR7821937
+44881449 reads; of these:
+  44881449 (100.00%) were paired; of these:
+    2371673 (5.28%) aligned concordantly 0 times
+    39841826 (88.77%) aligned concordantly exactly 1 time
+    2667950 (5.94%) aligned concordantly >1 times
+    ----
+    2371673 pairs aligned concordantly 0 times; of these:
+      259358 (10.94%) aligned discordantly 1 time
+    ----
+    2112315 pairs aligned 0 times concordantly or discordantly; of these:
+      4224630 mates make up the pairs; of these:
+        2232619 (52.85%) aligned 0 times
+        1695172 (40.13%) aligned exactly 1 time
+        296839 (7.03%) aligned >1 times
+97.51% overall alignment rate
+
+Output for SRR7821938
+40988016 reads; of these:
+  40988016 (100.00%) were paired; of these:
+    2157856 (5.26%) aligned concordantly 0 times
+    37184958 (90.72%) aligned concordantly exactly 1 time
+    1645202 (4.01%) aligned concordantly >1 times
+    ----
+    2157856 pairs aligned concordantly 0 times; of these:
+      159662 (7.40%) aligned discordantly 1 time
+    ----
+    1998194 pairs aligned 0 times concordantly or discordantly; of these:
+      3996388 mates make up the pairs; of these:
+        2264402 (56.66%) aligned 0 times
+        1528317 (38.24%) aligned exactly 1 time
+        203669 (5.10%) aligned >1 times
+97.24% overall alignment rate
+
+Output for SRR7821939
+46697727 reads; of these:
+  46697727 (100.00%) were paired; of these:
+    1894033 (4.06%) aligned concordantly 0 times
+    41749806 (89.40%) aligned concordantly exactly 1 time
+    3053888 (6.54%) aligned concordantly >1 times
+    ----
+    1894033 pairs aligned concordantly 0 times; of these:
+      189232 (9.99%) aligned discordantly 1 time
+    ----
+    1704801 pairs aligned 0 times concordantly or discordantly; of these:
+      3409602 mates make up the pairs; of these:
+        1790377 (52.51%) aligned 0 times
+        1410550 (41.37%) aligned exactly 1 time
+        208675 (6.12%) aligned >1 times
+98.08% overall alignment rate
+
+Output for SRR7821949
+29659690 reads; of these:
+  29659690 (100.00%) were paired; of these:
+    2323422 (7.83%) aligned concordantly 0 times
+    25343902 (85.45%) aligned concordantly exactly 1 time
+    1992366 (6.72%) aligned concordantly >1 times
+    ----
+    2323422 pairs aligned concordantly 0 times; of these:
+      300544 (12.94%) aligned discordantly 1 time
+    ----
+    2022878 pairs aligned 0 times concordantly or discordantly; of these:
+      4045756 mates make up the pairs; of these:
+        2629671 (65.00%) aligned 0 times
+        1138326 (28.14%) aligned exactly 1 time
+        277759 (6.87%) aligned >1 times
+95.57% overall alignment rate
+
+Output for SRR7821950
+22228490 reads; of these:
+  22228490 (100.00%) were paired; of these:
+    1662122 (7.48%) aligned concordantly 0 times
+    19083954 (85.85%) aligned concordantly exactly 1 time
+    1482414 (6.67%) aligned concordantly >1 times
+    ----
+    1662122 pairs aligned concordantly 0 times; of these:
+      195005 (11.73%) aligned discordantly 1 time
+    ----
+    1467117 pairs aligned 0 times concordantly or discordantly; of these:
+      2934234 mates make up the pairs; of these:
+        1799898 (61.34%) aligned 0 times
+        915623 (31.20%) aligned exactly 1 time
+        218713 (7.45%) aligned >1 times
+95.95% overall alignment rate
+
+Output for SRR7821951
+32968214 reads; of these:
+  32968214 (100.00%) were paired; of these:
+    2391739 (7.25%) aligned concordantly 0 times
+    28375424 (86.07%) aligned concordantly exactly 1 time
+    2201051 (6.68%) aligned concordantly >1 times
+    ----
+    2391739 pairs aligned concordantly 0 times; of these:
+      307024 (12.84%) aligned discordantly 1 time
+    ----
+    2084715 pairs aligned 0 times concordantly or discordantly; of these:
+      4169430 mates make up the pairs; of these:
+        2525353 (60.57%) aligned 0 times
+        1326597 (31.82%) aligned exactly 1 time
+        317480 (7.61%) aligned >1 times
+96.17% overall alignment rate
+
+Output for SRR7821952
+22952527 reads; of these:
+  22952527 (100.00%) were paired; of these:
+    1527464 (6.65%) aligned concordantly 0 times
+    19877538 (86.60%) aligned concordantly exactly 1 time
+    1547525 (6.74%) aligned concordantly >1 times
+    ----
+    1527464 pairs aligned concordantly 0 times; of these:
+      288337 (18.88%) aligned discordantly 1 time
+    ----
+    1239127 pairs aligned 0 times concordantly or discordantly; of these:
+      2478254 mates make up the pairs; of these:
+        1375283 (55.49%) aligned 0 times
+        887987 (35.83%) aligned exactly 1 time
+        214984 (8.67%) aligned >1 times
+97.00% overall alignment rate
+
+Output for SRR7821953
+21144888 reads; of these:
+  21144888 (100.00%) were paired; of these:
+    1305873 (6.18%) aligned concordantly 0 times
+    18301349 (86.55%) aligned concordantly exactly 1 time
+    1537666 (7.27%) aligned concordantly >1 times
+    ----
+    1305873 pairs aligned concordantly 0 times; of these:
+      170718 (13.07%) aligned discordantly 1 time
+    ----
+    1135155 pairs aligned 0 times concordantly or discordantly; of these:
+      2270310 mates make up the pairs; of these:
+        1398103 (61.58%) aligned 0 times
+        703740 (31.00%) aligned exactly 1 time
+        168467 (7.42%) aligned >1 times
+96.69% overall alignment rate
+
+Output for SRR7821968
+30774869 reads; of these:
+  30774869 (100.00%) were paired; of these:
+    3429804 (11.14%) aligned concordantly 0 times
+    24064441 (78.20%) aligned concordantly exactly 1 time
+    3280624 (10.66%) aligned concordantly >1 times
+    ----
+    3429804 pairs aligned concordantly 0 times; of these:
+      294014 (8.57%) aligned discordantly 1 time
+    ----
+    3135790 pairs aligned 0 times concordantly or discordantly; of these:
+      6271580 mates make up the pairs; of these:
+        4124495 (65.76%) aligned 0 times
+        1651155 (26.33%) aligned exactly 1 time
+        495930 (7.91%) aligned >1 times
+93.30% overall alignment rate
+
+Output for SRR7821969
+18844848 reads; of these:
+  18844848 (100.00%) were paired; of these:
+    3393596 (18.01%) aligned concordantly 0 times
+    14082919 (74.73%) aligned concordantly exactly 1 time
+    1368333 (7.26%) aligned concordantly >1 times
+    ----
+    3393596 pairs aligned concordantly 0 times; of these:
+      204790 (6.03%) aligned discordantly 1 time
+    ----
+    3188806 pairs aligned 0 times concordantly or discordantly; of these:
+      6377612 mates make up the pairs; of these:
+        4566687 (71.60%) aligned 0 times
+        1382748 (21.68%) aligned exactly 1 time
+        428177 (6.71%) aligned >1 times
+87.88% overall alignment rate
+
+Output for SRR7821970
+25454472 reads; of these:
+  25454472 (100.00%) were paired; of these:
+    3494270 (13.73%) aligned concordantly 0 times
+    19661491 (77.24%) aligned concordantly exactly 1 time
+    2298711 (9.03%) aligned concordantly >1 times
+    ----
+    3494270 pairs aligned concordantly 0 times; of these:
+      287113 (8.22%) aligned discordantly 1 time
+    ----
+    3207157 pairs aligned 0 times concordantly or discordantly; of these:
+      6414314 mates make up the pairs; of these:
+        4281092 (66.74%) aligned 0 times
+        1634516 (25.48%) aligned exactly 1 time
+        498706 (7.77%) aligned >1 times
+91.59% overall alignment rate
