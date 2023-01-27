@@ -6,10 +6,12 @@ The file path contained in the codes may no longer be available due to rearrange
 
 ### Overview of steps:
 1. General Preparation: Directories of the files & Workspace
-2. Quality check: fastqc and multiqc[R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/2_Quality_Check)
-3. HISAT2 mapping to reference genome
-4. FeatureCounts
-5. DESeq2 quality check
-6. Differential expression analysis
-7. Overrepresentation Analysis
-Extra: result visualization & misc
+2. Quality check: fastqc and multiqc [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/2_Quality_Check)
+3. HISAT2 mapping to reference genome 
+  3.1 HISAT [BASH script]()
+4. FeatureCounts [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4_FeatureCounts)
+  4.1 Trimming file for DESeq2 [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4.2_FeatureCounts_Trimming%20output)
+5. DESeq2 quality check [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts)
+6. Differential expression analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts) 
+7. Overrepresentation Analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts)
+Extra: result visualization & misc [Folder](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/tree/main/Images)
