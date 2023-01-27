@@ -12,12 +12,12 @@ The file path contained in the codes may no longer be available due to rearrange
 1. General Preparation: Directories of the files & Workspace
 2. Quality check: fastqc and multiqc [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/2_Quality_Check)
 3. HISAT2 mapping to reference genome 
-  1. HISAT [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_HISAT2)
-  2. Convert sam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Sam_to_Bam)
-  3. Sort bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Sorting%20Bam%20Files)
-  4. Index bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Indexing)
+  - HISAT [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_HISAT2)
+  - Convert sam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Sam_to_Bam)
+  - Sort bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Sorting%20Bam%20Files)
+  - Index bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Indexing)
 4. FeatureCounts [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4_FeatureCounts)
-  1. Trimming file for DESeq2 [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4.2_FeatureCounts_Trimming%20output)
+  - Trimming file for DESeq2 [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4.2_FeatureCounts_Trimming%20output)
 5. DESeq2 quality check [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts)
 6. Differential expression analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts) 
 7. Overrepresentation Analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts)
