@@ -5,7 +5,7 @@ Differential expression analysis of toxoplasma infected mice
 
 ## Notice:
 
-The file path contained in the codes may no longer be available due to rearrangements, but in such case, explaination will be given in a markdown statment, with the new file path given/what content has been processed in the step. If any questions regarding the file path, please contact xiaoyue.deng@students.unibe.ch . 
+In some cases the file path used in the script may be in our personal IBU space or no long availiable, but explaination will be given in a markdown statment, with the new file path given/what content has been processed in the step. If any questions regarding the file path, please contact xiaoyue.deng@students.unibe.ch . 
 
 ### Overview of steps:
 
