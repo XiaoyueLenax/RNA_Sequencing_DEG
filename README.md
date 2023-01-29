@@ -17,8 +17,8 @@ In some cases the file path used in the script may be in our personal IBU space 
   - Sort bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Sorting%20Bam%20Files)
   - Index bam files [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/3_Mapping_Indexing)
 4. FeatureCounts [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4_FeatureCounts)
-  - Trimming file for DESeq2 [BASH script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4.2_FeatureCounts_Trimming%20output)
+  - Trimming file for DESeq2 [BASH command line](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/4.2_FeatureCounts_Trimming%20output)
 5. DESeq2 quality check [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts)
 6. Differential expression analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts) 
 7. Overrepresentation Analysis [R script](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/blob/main/5-7_R%20scripts) </p>
-Extra: result visualization & misc [Folder](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/tree/main/Images)
+8. Extra: result visualization & misc [Folder](https://github.com/XiaoyueLenax/RNA_Sequencing_DEG/tree/main/Images)
